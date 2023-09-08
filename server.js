@@ -16,6 +16,9 @@ app.listen(PORT, (error) => {
     error ? console.log(error) : console.log(`server is running on port ${PORT}`)
 })
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Triangulation Calculator API');
+});
 app.post('/triangulate-cone', (req, res) => {
     const { height, radius, segments } = req.body;
 

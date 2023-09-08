@@ -5,7 +5,6 @@ const calcNode = (i, radius, numOfSegments) => {
         y: radius * Math.sin(angle),
         z: 0
     }
-    console.log(node);
 
     return node;
 }
@@ -20,7 +19,6 @@ const calcTriangulation = (height, radius, numOfSegments) => {
 
     for (let i = 0; i < numOfSegments; i++){
         const nodeP = calcNode(i, radius, numOfSegments);
-        console.log(nodeP)
         const nodePNext = calcNode(i + 1, radius, numOfSegments);
         setOfTriangles.push([nodeA, nodeP, nodePNext]);
     }
