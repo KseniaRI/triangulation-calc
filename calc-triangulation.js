@@ -1,10 +1,13 @@
 const calcNode = (i, radius, numOfSegments) => {
     const angle = (2 * Math.PI * i) / numOfSegments;
-    return {
+    const node = {
         x: radius * Math.cos(angle),
         y: radius * Math.sin(angle),
         z: 0
     }
+    console.log(node);
+
+    return node;
 }
 
 const calcTriangulation = (height, radius, numOfSegments) => {
@@ -16,9 +19,12 @@ const calcTriangulation = (height, radius, numOfSegments) => {
     }
 
     for (let i = 0; i < numOfSegments; i++){
-       setOfTriangles.push([nodeA, calcNode(i, radius, numOfSegments), calcNode(i + 1, radius, numOfSegments)]);
+        const nodeP = calcNode(i, radius, numOfSegments);
+        console.log(nodeP)
+        const nodePNext = calcNode(i + 1, radius, numOfSegments);
+        setOfTriangles.push([nodeA, nodeP, nodePNext]);
     }
-
+    console.log(setOfTriangles)
     return setOfTriangles;
 }
 

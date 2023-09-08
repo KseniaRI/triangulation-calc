@@ -8,6 +8,7 @@ const calcTriangulation = require('./calc-triangulation');
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 const { PORT } = process.env;
 
@@ -24,5 +25,5 @@ app.post('/triangulate-cone', (req, res) => {
     
     const triangles = calcTriangulation(height, radius, segments);
 
-    res.json({ triangles });
+    return res.json({ triangles });
 });
