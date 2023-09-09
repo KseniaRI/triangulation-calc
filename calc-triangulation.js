@@ -22,7 +22,7 @@ const calcTriangulation = (height, radius, numOfSegments) => {
         const nodePNext = calcNode(i + 1, radius, numOfSegments);
         setOfTriangles.push([nodeA, nodeP, nodePNext]);
     }
-    console.log(setOfTriangles)
+    
     return setOfTriangles;
 }
 
