@@ -12,10 +12,3 @@ height: number,
 radius: number,
 segments: number
 }
-
---response.data.triangles
-[
-[{x,y,z}, {x,y,z}, {x,y,z}],
-[{x,y,z}, {x,y,z}, {x,y,z}],
-[{x,y,z}, {x,y,z}, {x,y,z}]...
-]
